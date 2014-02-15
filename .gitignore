@@ -1,0 +1,12 @@
+# ignore all .class files
+*.class
+
+# ignore the target directory
+target/
+
+# ignore iml
+*.iml
+*.idea
+
+#ignore mac-osx files
+*.DS_Store
