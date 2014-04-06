@@ -23,4 +23,39 @@
 		<servlet-name>twelfthmen</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+
+    <jsp-config>
+        <taglib>
+            <taglib-uri>/spring</taglib-uri>
+            <taglib-location>/WEB-INF/taglib/spring.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/spring-form</taglib-uri>
+            <taglib-location>/WEB-INF/taglib/spring-form.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
+            <taglib-location>/WEB-INF/taglib/c.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>http://java.sun.com/jstl/functions</taglib-uri>
+            <taglib-location>/WEB-INF/taglib/fn.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>
+            <taglib-location>/WEB-INF/taglib/fmt.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>http://www.springframework.org/security/tags</taglib-uri>
+            <taglib-location>/WEB-INF/taglib/security.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>http://displaytag.sf.net</taglib-uri>
+            <taglib-location>/WEB-INF/taglib/displaytag-el.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>/ms</taglib-uri>
+            <taglib-location>/WEB-INF/taglib/ms.tld</taglib-location>
+        </taglib>
+    </jsp-config>
 </web-app>
