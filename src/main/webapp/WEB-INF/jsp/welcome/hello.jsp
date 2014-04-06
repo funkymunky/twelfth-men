@@ -7,8 +7,15 @@
 <body>
     <div class="container">
         <div class="well well-lg">
-            <h1>${message}</h1> Twelfth Men!
+            <h1>Wicketless</h1>
+            <a href="/twelfth-men/player" id="login" class="btn btn-default">Login</a>
         </div>
     </div>
 </body>
+<script type="text/javascript">
+    $(function() {
+      // DO NOTHING
+    });
+
+</script>
 </html>
