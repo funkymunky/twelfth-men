@@ -2,25 +2,40 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
+<head>
+    <%@ include file="/WEB-INF/jsp/include/head.jsp" %>
+</head>
 <body>
-<h2>Here is a simple CRUD using Spring MVC and MongoDB.</h2>
+<div class="container">
+    <h1>Player list</h1>
 
-<form action="player/save" method="post">
-    <input type="hidden" name="id">
-    <label for="username">Player Name</label>
-    <input type="text" id="username" name="username"/>
-    <br/>
-    <label for="nickname">Nickname</label>
-    <input type="text" id="nickname" name="nickname"/>
-    <input type="submit" value="Submit"/>
-</form>
+    <form action="playerSave" method="post">
+        <div class="form-group">
+            <input type="hidden" name="id">
+            <label for="username">Player Name</label>
+            <input type="text" id="username" name="username"/>
+        </div>
+        <div class="form-group">
+            <label for="nickname">Nickname</label>
+            <input type="text" id="nickname" name="nickname"/>
+        </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 
-<table border="1">
-    <c:forEach var="player" items="${playerList}">
-        <tr>
-            <td>${player.username}</td><td><input type="button" value="delete" onclick="window.location='player/delete?id=${player.id}'"/></td>
-        </tr>
-    </c:forEach>
-</table>
+    <table class="table">
+        <thead>
+            <tr><th>Username</th><th>Nickname</th><th></th></tr>
+        </thead>
+        <tbody>
+        <c:forEach var="player" items="${playerList}">
+            <tr>
+                <td>${player.username}</td>
+                <td>${player.nickname}</td>
+                <td><input type="button" value="delete" onclick="window.location='playerDelete?id=${player.id}'"/></td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>

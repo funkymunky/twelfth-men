@@ -22,7 +22,7 @@ public class PlayerController {
         return "/player/playerlist";
     }
 
-    @RequestMapping(value="/player/save", method= RequestMethod.POST)
+    @RequestMapping(value="/playerSave", method= RequestMethod.POST)
     public String createPlayer(@ModelAttribute Player player, ModelMap model) {
         if (StringUtils.hasText(player.getId())) {
             playerService.updatePlayer(player);
@@ -32,7 +32,7 @@ public class PlayerController {
         return "/player/playerlist";
     }
 
-    @RequestMapping(value="/player/delete", method= RequestMethod.GET)
+    @RequestMapping(value="/playerDelete", method= RequestMethod.GET)
     public String deletePlayer(@ModelAttribute Player player, ModelMap model) {
         playerService.deletePlayer(player);
         return "/player/playerlist";
