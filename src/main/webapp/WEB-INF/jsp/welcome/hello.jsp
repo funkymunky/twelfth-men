@@ -8,7 +8,7 @@
     <div class="container">
         <div class="well well-lg">
             <h1>Wicketless</h1>
-            <a href="/twelfth-men/player" id="login" class="btn btn-default">Login</a>
+            <a href="/twelfth-men/players" id="login" class="btn btn-default">Login</a>
         </div>
     </div>
 </body>

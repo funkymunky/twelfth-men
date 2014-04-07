@@ -9,8 +9,11 @@ public class Player {
 
     @Id
     private String id;
-    String username;
-    String nickname;
+    String nickName;
+    String firstName;
+    String lastName;
+    String phone;
+    String email;
 
     public String getId() {
         return id;
@@ -19,24 +22,49 @@ public class Player {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
-    public String getNickname() {
-        return nickname;
+
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
     public String toString() {
-        return String.format("user: %s; nickname: %s", username, nickname);
+        return String.format("nickName: %s", nickName);
     }
 }

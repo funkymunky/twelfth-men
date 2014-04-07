@@ -16,10 +16,15 @@ public class PlayerController {
     @Autowired
     private PlayerService playerService;
 
-    @RequestMapping(value="/player", method= RequestMethod.GET)
+    @RequestMapping(value="/players", method= RequestMethod.GET)
     public String getPlayerList(ModelMap model) {
         model.addAttribute("playerList", playerService.listPlayers());
-        return "/player/playerlist";
+        return "/players/list";
+    }
+
+    @RequestMapping(value="/playerAdd", method= RequestMethod.GET)
+    public String addPlayer(ModelMap model) {
+        return "/players/add";
     }
 
     @RequestMapping(value="/playerSave", method= RequestMethod.POST)
@@ -29,13 +34,13 @@ public class PlayerController {
         } else {
             playerService.addPlayer(player);
         }
-        return "/player/playerlist";
+        return "/players/list";
     }
 
     @RequestMapping(value="/playerDelete", method= RequestMethod.GET)
     public String deletePlayer(@ModelAttribute Player player, ModelMap model) {
         playerService.deletePlayer(player);
-        return "/player/playerlist";
+        return "/players/list";
     }
 
 
