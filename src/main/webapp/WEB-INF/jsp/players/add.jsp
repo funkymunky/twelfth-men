@@ -1,4 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring-form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -10,30 +12,43 @@
 <div class="container">
     <h1>Add player</h1>
 
-    <form action="playerSave" method="post">
+    <spring-form:form method="POST" modelAttribute="player" class="form-horizontal">
+    <fieldset>
         <input type="hidden" name="id">
-        <div class="form-group">
-            <label for="firstName">First name:</label>
-            <input type="text" id="firstName" name="firstName"/>
+        <div class="control-group">
+            <label class="control-label" for="firstName">First name:</label>
+            <div class="controls">
+                <spring-form:input path="firstName" name="firstName"/>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="lastName">Last name:</label>
-            <input type="text" id="lastName" name="lastName"/>
+        <div class="control-group">
+            <label class="control-label" for="lastName">Last name:</label>
+            <div class="controls">
+                <spring-form:input path="lastName" name="lastName"/>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="nickName">Nickname</label>
-            <input type="text" id="nickName" name="nickName"/>
+        <div class="control-group">
+            <label class="control-label" for="nickName">Nickname</label>
+            <div class="controls">
+                <spring-form:input path="nickName" name="nickName"/>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="phone">Mobile:</label>
-            <input type="text" id="phone" name="phone"/>
+        <div class="control-group">
+            <label class="control-label" for="phone">Mobile:</label>
+            <div class="controls">
+                <spring-form:input path="phone" name="phone"/>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email"/>
+        <div class="control-group">
+            <label class="control-label" for="email">Email:</label>
+            <div class="controls">
+                <spring-form:input path="email" name="email"/>
+            </div>
         </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+        <br/>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </fieldset>
+    </spring-form:form>
 </div>
 </body>
 </html>

@@ -9,7 +9,7 @@
 <%@ include file="/WEB-INF/jsp/include/navbar.jsp" %>
 <div class="container">
     <h1>Player list</h1>
-    <a href="/twelfth-men/playerAdd" class="btn btn-default">Add player</a>
+    <a href="/twelfth-men/players/add" class="btn btn-default">Add player</a>
     <table class="table table-striped">
         <thead>
             <tr>

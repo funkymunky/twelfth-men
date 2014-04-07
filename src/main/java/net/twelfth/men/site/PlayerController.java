@@ -22,8 +22,9 @@ public class PlayerController {
         return "/players/list";
     }
 
-    @RequestMapping(value="/playerAdd", method= RequestMethod.GET)
+    @RequestMapping(value="/players/add", method= RequestMethod.GET)
     public String addPlayer(ModelMap model) {
+        model.addAttribute("player", new Player());
         return "/players/add";
     }
 
