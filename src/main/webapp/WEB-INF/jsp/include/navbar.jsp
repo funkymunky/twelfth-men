@@ -9,7 +9,7 @@
             <li class="active"><a href="#">Home</a></li>
             <li><a href="/twelfth-men/players">Players</a></li>
             <li><a href="/twelfth-men/matches">Matches</a></li>
-            <li><a href="/twelfth-men/draw">Admin</a></li>
+            <li><a href="/twelfth-men/admin">Admin</a></li>
         </ul>
     </div>
 
