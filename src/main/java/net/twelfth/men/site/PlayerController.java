@@ -9,6 +9,9 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.View;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 public class PlayerController {
@@ -28,14 +31,14 @@ public class PlayerController {
         return "/players/add";
     }
 
-    @RequestMapping(value="/playerSave", method= RequestMethod.POST)
-    public String createPlayer(@ModelAttribute Player player, ModelMap model) {
+    @RequestMapping(value="/players/add", method= RequestMethod.POST)
+    public View submitPlayer(@ModelAttribute Player player, ModelMap model) {
         if (StringUtils.hasText(player.getId())) {
             playerService.updatePlayer(player);
         } else {
             playerService.addPlayer(player);
         }
-        return "/players/list";
+        return new RedirectView("/twelfth-men/players");
     }
 
     @RequestMapping(value="/playerDelete", method= RequestMethod.GET)
