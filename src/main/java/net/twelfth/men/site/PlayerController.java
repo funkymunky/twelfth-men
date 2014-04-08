@@ -9,7 +9,6 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -42,9 +41,9 @@ public class PlayerController {
     }
 
     @RequestMapping(value="/playerDelete", method= RequestMethod.GET)
-    public String deletePlayer(@ModelAttribute Player player, ModelMap model) {
+    public View deletePlayer(@ModelAttribute Player player, ModelMap model) {
         playerService.deletePlayer(player);
-        return "/players/list";
+        return new RedirectView("/twelfth-men/players");
     }
 
 

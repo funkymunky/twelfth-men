@@ -9,7 +9,7 @@
 <%@ include file="/WEB-INF/jsp/include/navbar.jsp" %>
 <div class="container">
     <h1>Player list</h1>
-    <a href="/twelfth-men/players/add" class="btn btn-default">Add player</a>
+    <a href="/twelfth-men/players/add" class="btn btn-primary">Add player</a>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -17,6 +17,7 @@
                 <th>Name</th>
                 <th>Contact No.</th>
                 <th>Email</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -26,6 +27,9 @@
                 <td>${player.firstName} ${player.lastName}</td>
                 <td>${player.phone}</td>
                 <td>${player.email}</td>
+                <td>
+                    <button type="button" class="btn btn-default" onclick="window.location='playerDelete?id=${player.id}'">Delete</button>
+                </td>
             </tr>
         </c:forEach>
         </tbody>
