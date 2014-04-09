@@ -3,6 +3,8 @@ package net.twelfth.men.service;
 import net.twelfth.men.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -35,5 +37,27 @@ public class PlayerService {
 
     public void updatePlayer(Player player) {
         mongoTemplate.insert(player, COLLECTION_NAME);
+    }
+
+    public void updatePlayerDetails(Player player) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("id").is(player.getId()));
+        Player playerToUpdate = mongoTemplate.findOne(query, Player.class);
+
+        //modify and update with save()
+        playerToUpdate.setNickName(player.getNickName());
+        playerToUpdate.setFirstName(player.getFirstName());
+        playerToUpdate.setLastName(player.getLastName());
+        playerToUpdate.setPhone(player.getPhone());
+        playerToUpdate.setEmail(player.getEmail());
+
+        mongoTemplate.save(playerToUpdate);
+    }
+
+    public Player getPlayer(String id) {
+        Query playerQuery = new Query();
+        playerQuery.addCriteria(Criteria.where("id").is(id));
+
+        return mongoTemplate.findOne(playerQuery, Player.class);
     }
 }

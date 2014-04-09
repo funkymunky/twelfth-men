@@ -23,7 +23,7 @@
         <tbody>
         <c:forEach var="player" items="${playerList}">
             <tr>
-                <td>${player.nickName}</td>
+                <td><a href="/twelfth-men/players/edit/${player.id}">${player.nickName}</a></td>
                 <td>${player.firstName} ${player.lastName}</td>
                 <td>${player.phone}</td>
                 <td>${player.email}</td>

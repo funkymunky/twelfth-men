@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.View;
@@ -43,6 +44,20 @@ public class PlayerController {
     @RequestMapping(value="/playerDelete", method= RequestMethod.GET)
     public View deletePlayer(@ModelAttribute Player player, ModelMap model) {
         playerService.deletePlayer(player);
+        return new RedirectView("/twelfth-men/players");
+    }
+
+    @RequestMapping(value="/players/edit/{id}", method = RequestMethod.GET)
+    public String editPlayer(@PathVariable String id, ModelMap model) {
+        Player player = playerService.getPlayer(id);
+        model.addAttribute("player", player);
+        return "/players/edit";
+    }
+
+    @RequestMapping(value="/players/edit/{id}", method = RequestMethod.POST)
+    public View editPlayer(@ModelAttribute Player player, ModelMap model) {
+        playerService.updatePlayerDetails(player);
+
         return new RedirectView("/twelfth-men/players");
     }
 
